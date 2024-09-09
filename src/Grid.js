@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { gsap } from 'gsap';
 import './Grid.css';
 
@@ -76,7 +76,7 @@ const DotGrid = () => {
 
         // Calculate distance to all other dots and find closest neighbors
         const groupWidth = rect.width;
-        const maxDistance = 2 * groupWidth;
+        const maxDistance = 5 / 4 * groupWidth;
         const closestNeighbors = [];
 
         getCloserNeighbour(group, elPos, closestNeighbors, maxDistance);
@@ -118,7 +118,7 @@ const DotGrid = () => {
 
         // Calculate distance to all other dots and find closest neighbors
         const groupWidth = rect.width;
-        const maxDistance = 2 * groupWidth;
+        const maxDistance = 5 / 4 * groupWidth;
         const closestNeighbors = [];
 
         getCloserNeighbour(group, elPos, closestNeighbors, maxDistance);
@@ -164,7 +164,7 @@ const DotGrid = () => {
                 .to(dot, {
                     scale: 1,
                     y: 0,
-                    opacity: 0.5,
+                    opacity: 0.2,
                     backgroundColor: "#F0F0F0",
                     duration: 2,
                     ease: 'elastic.out(1, 0.3)',
