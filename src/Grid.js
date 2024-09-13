@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Grid.css';
 
-// gsap.ticker.useRAF(false);  // Disables requestAnimationFrame
+//Prevent lagging when scrolling the page !!
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.normalizeScroll(true);
 
-// // Define the interval for GSAP’s animation (optional, default is 60fps)
-// gsap.ticker.lagSmoothing(1000, 33);
 
 const WaterDropGrid = ({ setDotRef }) => {
     return (
@@ -132,6 +133,24 @@ const DotGrid = ({ setDotRef }) => {
                 }, distance * 0.1 + 0.15);
         });
     };
+
+    // const handleDotClick = (e) => {
+    //     const targetIndex = parseInt(e.target.dataset.index);
+    //     const gridElements = document.querySelectorAll('.dot-point');
+
+    //     gsap.to(gridElements, {
+    //         scale: 1.35,
+    //         y: -15,
+    //         backgroundColor: "#1e4ea1",
+    //         duration: 0.25,
+    //         ease: 'power2.out',
+    //         stagger: {
+    //             each: 0.1,  // Delay of 0.1s between each animation
+    //             grid: [gridSize.numRows, gridSize.numColumns], // Optional: define the grid pattern
+    //             from: targetIndex  // Animations stagger out from the clicked dot
+    //         }
+    //     });
+    // };
 
     const dots = [];
     let index = 0;
