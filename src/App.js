@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback, useRef } from 'react';
+import picProfile from './assets/picProfile.jpeg';
 import { SiGmail, SiGooglescholar, SiLetterboxd, SiGithub, SiLinkedin, SiStackexchange, SiLichess, SiDblp } from 'react-icons/si';
 import Grid from './Grid';
 import { gsap } from 'gsap';
@@ -158,12 +159,13 @@ function App() {
   }, [checkHexOverlap, smokeEffect]); // Include checkHexOverlap in the dependency array
 
   const shineRef = useRef(null);
+  const imageRef = useRef(null);
 
   const handleMouseLeaveShine = () => {
     gsap.fromTo(
-      shineRef.current,
-      { x: '-100%' },  // Start position (outside of the hexagon)
-      { x: '400%', duration: 1.5, ease: 'power1.inOut' }  // Move across the hexagon
+      imageRef.current,
+      { maskPosition: '160%' },  // Start position (outside of the hexagon)
+      { maskPosition: '-57%', duration: 1.5, ease: 'power1.inOut' }  // Move across the hexagon
     );
   };
 
@@ -171,7 +173,11 @@ function App() {
   return (
     <div className="App">
       <div className='title-container' ref={frontDivRef} onMouseLeave={handleMouseLeaveShine} >
-        <div className="shine" ref={shineRef}></div>
+        {/* <div className="shine" ref={shineRef}></div> */}
+        <div className="image-container">
+          <img src={picProfile} alt="Smiling Profile" ref={imageRef} className="background-image" />
+        </div>
+        <div className="mask" ref={shineRef}></div>
         <h1>Ulysse Pavloff</h1>
         <span className="changing-text-container">
           <p>Phd in{' '}

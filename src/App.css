@@ -153,3 +153,25 @@
 .articles-list ul li a:hover {
   text-decoration: underline;
 }
+
+
+/*Image*/
+.image-container {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.background-image {
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mask-position: 160%;
+  mask-image: url('assets/shineMask.png');
+  mask-size: 200%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
