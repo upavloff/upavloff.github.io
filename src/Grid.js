@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Grid.css';
@@ -23,7 +23,7 @@ const calculateGridSize = () => {
     const screenHeight = window.innerHeight;
 
     // Calculate how many dots fit in the width and height of the screen
-    const numColumns = Math.ceil(screenWidth / dotSize);
+    const numColumns = Math.ceil(screenWidth / dotSize) + 1;
     const numRows = Math.ceil(screenHeight / dotSize);
 
     return { numColumns, numRows };
@@ -35,31 +35,19 @@ const DotGrid = ({ setDotRef }) => {
     let currentDot = null;
     let currentElPos = null;
 
-    useEffect(() => {
-        // Update grid size whenever the window is resized
-        const handleResize = () => {
-            setGridSize(calculateGridSize());
-        };
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-    const handleMouseMove = (e) => {
+    const handleMouseMove = useCallback((e) => {
         const x = e.clientX - currentElPos.x;
         const y = e.clientY - currentElPos.y;
 
-        gsap.to(currentDot, {
+        const mouseMoveTimeline = gsap.timeline();
+        mouseMoveTimeline.to(currentDot, {
             x: x * 0.3,
             y: y * 0.3,
             duration: 0.4,
             ease: 'power2.out',
             overwrite: 'auto',
         });
-    };
+    }, [currentElPos, currentDot]);
 
     const handleMouseEnter = (e) => {
         const group = e.currentTarget;
@@ -72,7 +60,9 @@ const DotGrid = ({ setDotRef }) => {
         currentDot = dot;
         currentElPos = elPos;
 
-        gsap.to(dot, {
+        const mouseEnterTimeline = gsap.timeline();
+
+        mouseEnterTimeline.to(dot, {
             opacity: 1,
             scale: 1.2,
             duration: 0.3,
@@ -87,7 +77,9 @@ const DotGrid = ({ setDotRef }) => {
         const group = e.currentTarget;
         const dot = group.querySelector('.dot-point');
 
-        gsap.to(dot, {
+
+        const dotTimeline = gsap.timeline();
+        dotTimeline.to(dot, {
             x: 0,
             y: 0,
             scale: 1,
@@ -134,23 +126,18 @@ const DotGrid = ({ setDotRef }) => {
         });
     };
 
-    // const handleDotClick = (e) => {
-    //     const targetIndex = parseInt(e.target.dataset.index);
-    //     const gridElements = document.querySelectorAll('.dot-point');
+    useEffect(() => {
+        // Update grid size whenever the window is resized
+        const handleResize = () => {
+            setGridSize(calculateGridSize());
+        };
 
-    //     gsap.to(gridElements, {
-    //         scale: 1.35,
-    //         y: -15,
-    //         backgroundColor: "#1e4ea1",
-    //         duration: 0.25,
-    //         ease: 'power2.out',
-    //         stagger: {
-    //             each: 0.1,  // Delay of 0.1s between each animation
-    //             grid: [gridSize.numRows, gridSize.numColumns], // Optional: define the grid pattern
-    //             from: targetIndex  // Animations stagger out from the clicked dot
-    //         }
-    //     });
-    // };
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const dots = [];
     let index = 0;
