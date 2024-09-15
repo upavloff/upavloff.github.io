@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/web-page/public/index.html/static/css/main.46aba531.css",
-    "main.js": "/web-page/public/index.html/static/js/main.3db25661.js",
-    "static/media/picProfile.jpeg": "/web-page/public/index.html/static/media/picProfile.1d39d97785b9ee75c603.jpeg",
-    "static/media/shineMask.png": "/web-page/public/index.html/static/media/shineMask.7b87290840751ff8ec51.png",
-    "index.html": "/web-page/public/index.html/index.html",
-    "main.46aba531.css.map": "/web-page/public/index.html/static/css/main.46aba531.css.map",
-    "main.3db25661.js.map": "/web-page/public/index.html/static/js/main.3db25661.js.map"
+    "main.css": "/web-page/static/css/main.e0ffaf40.css",
+    "main.js": "/web-page/static/js/main.f5fb1c77.js",
+    "static/media/picProfile.jpeg": "/web-page/static/media/picProfile.1d39d97785b9ee75c603.jpeg",
+    "static/media/shineMask.png": "/web-page/static/media/shineMask.7b87290840751ff8ec51.png",
+    "index.html": "/web-page/index.html",
+    "main.e0ffaf40.css.map": "/web-page/static/css/main.e0ffaf40.css.map",
+    "main.f5fb1c77.js.map": "/web-page/static/js/main.f5fb1c77.js.map"
   },
   "entrypoints": [
-    "static/css/main.46aba531.css",
-    "static/js/main.3db25661.js"
+    "static/css/main.e0ffaf40.css",
+    "static/js/main.f5fb1c77.js"
   ]
 }
