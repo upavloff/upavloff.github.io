@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/web-page/static/css/main.e0ffaf40.css",
+    "main.js": "/web-page/static/js/main.f5fb1c77.js",
+    "static/media/picProfile.jpeg": "/web-page/static/media/picProfile.1d39d97785b9ee75c603.jpeg",
+    "static/media/shineMask.png": "/web-page/static/media/shineMask.7b87290840751ff8ec51.png",
+    "index.html": "/web-page/index.html",
+    "main.e0ffaf40.css.map": "/web-page/static/css/main.e0ffaf40.css.map",
+    "main.f5fb1c77.js.map": "/web-page/static/js/main.f5fb1c77.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e0ffaf40.css",
+    "static/js/main.f5fb1c77.js"
+  ]
+}
