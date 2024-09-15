@@ -64,8 +64,6 @@
   white-space: nowrap;
 }
 
-/* SECTION About and article*/
-
 /* About and Articles Section Layout */
 /* Social list styling */
 .about-me {
@@ -87,13 +85,15 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
-  /* Add space between icons */
+  justify-items: center;
+  align-items: center;
 }
 
 .social-list li {
   display: inline-block;
   font-size: 30px;
   transition: color 0.3s ease, transform 0.3s ease;
+  text-align: center;
 }
 
 .social-list li:hover {
@@ -113,6 +113,8 @@
   display: flex;
   padding: 50px;
   justify-content: space-between;
+  gap: 20px;
+  /* Optional: Adds space between columns */
 }
 
 .articles-list {
@@ -152,6 +154,32 @@
 
 .articles-list ul li a:hover {
   text-decoration: underline;
+}
+
+/* Media Query for Small Screens (below 768px wide) */
+@media (max-width: 768px) {
+  .about-articles-section {
+    flex-direction: column;
+    /* Stack the sections vertically */
+    padding: 20px;
+  }
+
+  .about-me {
+    order: 2;
+    /* Display About Me after the Scientific Articles */
+    margin-right: 0;
+    margin-bottom: 20px;
+    max-width: 100%;
+    /* Take full width */
+  }
+
+  .articles-list {
+    order: 1;
+    /* Display Scientific Articles first */
+    padding: 20px;
+    max-width: 100%;
+    /* Take full width */
+  }
 }
 
 
