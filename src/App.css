@@ -1,205 +1,265 @@
-/* src/App.css */
-.App {
-  padding: 20px;
-}
-
-.title-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  padding: 20px;
+/* Apply Source Sans Pro as the default font for the body */
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   color: #333;
-  background-color: #baa9cb;
-
-  width: auto;
-  height: auto;
-
-  /* Dynamically maintain the hexagon shape */
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  aspect-ratio: 1 / 1;
-  /* Ensure the aspect ratio stays square */
-  -webkit-mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0) 130%);
-  mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0) 130%);
+  margin: 0;
+  padding: 0;
+  /* background-color: #f5f5f5; */
 }
 
-.title-container h1 {
+/* Apply Lato for titles and headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  /* color: #007bff; */
+}
+
+/* Customize buttons */
+.buttons-container button {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  background-color: #f0f0f0;
+  border: none;
   padding: 10px 20px;
-  font-size: 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.title-container p {
-  margin: 0;
-  font-size: 1rem;
-  color: #555;
+
+
+
+/* SECTION: About and Articles Container */
+.about-articles-section {
+  display: flex;
+  padding: 50px;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* Ensures the items align at the top */
 }
 
-.shine {
-  position: absolute;
-  height: 100%;
-  left: -75%;
-  width: 50%;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2), transparent);
-  transform: skewX(-25deg);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.changing-text-container {
-  display: inline-block;
-  width: 190px;
-  /* Adjust width to fit the longest word */
-  text-align: left;
-}
-
-.changing-text {
-  display: inline-block;
-  white-space: nowrap;
-}
-
-/* About and Articles Section Layout */
-/* Social list styling */
+/* About Me with Neomorphism Effect */
 .about-me {
   position: sticky;
-  top: 20px;
+  top: 50px;
   flex: 1;
-  height: fit-content;
   max-width: 300px;
-  margin-right: 50px;
-  padding: 20px;
-  background-color: #f3f3f3;
+  padding: 25px;
+  /* Neomorphism */
+  margin-right: 30px;
+  /* Add space between the left and right sections */
+}
+
+.about-me h1 {
+  color: #6867af;
+  font-size: 34px;
+  /* color: #69a7ba; */
+}
+
+/* .profile-pic {
+  width: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+} */
+
+/* Right Section Styling */
+.right-section {
+  flex: 2;
+  padding-right: 25px;
+}
+
+.right-section li {
+  flex: 2;
+  margin-bottom: 10px;
+}
+
+.right-section a {
+  color: #6867af;
+  /* Set the text color */
+  text-decoration: none;
+  /* Remove the underline by default */
+}
+
+.right-section a:hover {
+  text-decoration: underline;
+  /* Add underline on hover */
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 30px;
+
+}
+
+.buttons-container button {
+  /* background-color: #f0f0f0; */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.buttons-container button:hover {
+  transform: scale(1.05);
+}
+
+.buttons-container button.active {
+  background-color: #6867af;
+  color: #ffffff;
+}
+
+/* Content Containers */
+.content-container {
+  padding: 25px;
+  /* border-radius: 10px; */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  display: none;
+  /* Hidden by default */
+}
+
+.content-container.active {
+  display: block;
+  /* Show the active content */
 }
 
 .social-list {
   list-style-type: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(8, auto);
+  /* Attempt to fit all 8 items on one line */
+  gap: 20px;
+  /* Minimum gap between icons */
+  width: 100%;
   justify-items: center;
+  /* Center the icons horizontally */
   align-items: center;
+  /* Center icons vertically */
+}
+
+@media (max-width: 1200px) {
+  .social-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .social-list {
+    grid-template-columns: repeat(8, auto);
+  }
 }
 
 .social-list li {
-  display: inline-block;
-  font-size: 30px;
+  font-size: 20px;
   transition: color 0.3s ease, transform 0.3s ease;
-  text-align: center;
-}
-
-.social-list li:hover {
-  transform: scale(1.1);
 }
 
 .social-list li a {
-  color: #baa9cb;
+  color: #6a6a6a;
+}
+
+.social-list li:hover {
+  transform: scale(1.2);
 }
 
 .social-list li a:hover {
-  color: #69a7ba;
+  color: #7978a2;
+  /* transform: scale(.1); */
+  /* Slightly enlarges the icon on hover */
 }
 
-/* Scientific papers */
-.about-articles-section {
-  display: flex;
-  padding: 50px;
-  justify-content: space-between;
-  gap: 20px;
-  /* Optional: Adds space between columns */
-}
-
-.articles-list {
-  flex: 2;
-  padding: 20px;
-  background-color: #f3f3f3;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.articles-list ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.articles-list ul li {
-  position: relative;
-  padding-left: 40px;
-  margin-bottom: 20px;
-}
-
-.articles-list ul li::before {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: 6px;
-  width: 8px;
-  height: 8px;
-  background-color: #221e26;
-  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-}
-
-.articles-list ul li a {
-  text-decoration: none;
-  color: #007bff;
-}
-
-.articles-list ul li a:hover {
-  text-decoration: underline;
-}
-
-/* Media Query for Small Screens (below 768px wide) */
+/* Layout for smaller screens (phone) */
 @media (max-width: 768px) {
   .about-articles-section {
     flex-direction: column;
-    /* Stack the sections vertically */
-    padding: 20px;
+    /* Stacks the sections vertically */
   }
 
   .about-me {
-    order: 2;
-    /* Display About Me after the Scientific Articles */
+    max-width: 100%;
     margin-right: 0;
+    /* Removes right margin to avoid extra space */
     margin-bottom: 20px;
-    max-width: 100%;
-    /* Take full width */
-  }
-
-  .articles-list {
-    order: 1;
-    /* Display Scientific Articles first */
-    padding: 20px;
-    max-width: 100%;
-    /* Take full width */
+    /* Adds space below the About Me section */
   }
 }
 
 
-/*Image*/
-.image-container {
+/*Tool Tip*/
+/* Position the tooltip container */
+.social-list li {
+  position: relative;
+  display: inline-block;
+}
+
+.social-list li a::after {
+  content: attr(data-tooltip);
   position: absolute;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
+  bottom: -25px;
+  /* Adjust position */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #343352c5;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  /* Prevents line breaks */
 }
 
-.background-image {
-  object-fit: cover;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  mask-position: 160%;
-  mask-image: url('assets/shineMask.png');
-  mask-size: 200%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+/* Show the tooltip on hover */
+.social-list li a:hover::after {
+  opacity: 1;
+}
+
+
+
+/* Container for CV content */
+.cv-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  /* margin-top: 20px; */
+}
+
+.cv-text {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.cv-image img {
+  width: 170px;
+  /* Adjust size of the image */
+  height: auto;
+  /* border-radius: 50%; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Optional: Add shadow for better aesthetics */
+}
+
+.cv-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cv-link:hover {
+  text-decoration: underline;
 }
