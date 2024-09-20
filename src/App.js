@@ -43,7 +43,7 @@ function App() {
               </a>
             </li>
             <li>
-              <a href="https://stackexchange.com/users/86774/upavloff" target="_blank" rel="noopener noreferrer" data-tooltip="Stack Exchange">
+              <a href="https://ethereum.stackexchange.com/users/86774/upavloff" target="_blank" rel="noopener noreferrer" data-tooltip="Stack Exchange">
                 <SiStackexchange />
               </a>
             </li>
