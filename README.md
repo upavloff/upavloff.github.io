@@ -24,9 +24,13 @@ Make sure to not forget the https in the `homepage` field of the `package.json` 
 
 Also, add a `?` after the `favico.ico` to make it visible: `<link rel="icon" href="favicon.ico?" />`.
 
+*ALSO* this can be due to the fact that after each `npm run deploy` to update the website the Custom domain in GitHub settings is reseted for some unknown reason. So put it again.
+
+
 Visit my webpage here: [pavloffulysse.com](https://pavloffulysse.com/)
 
 <img width="1408" alt="image" src="https://github.com/user-attachments/assets/0220ad4f-cf36-4089-a630-789eca1c4846">
+
 
 --
 
