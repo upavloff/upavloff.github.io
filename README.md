@@ -1,7 +1,33 @@
-# Getting Started with Create React App
+# Step to build this project
+
+## 1. Start by creating a React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## 2. Create your repository Github to host your project
+
+If you want to build a website with a custom domain, use as project name user.github.io, with user being your github handles.
+
+## 3. Start building your website and visualize it thanks to github page
+
+To do so run the commands explained in the [tutorial](https://github.com/gitname/react-gh-pages), and don't forget to set the publishing link on the `gh-pages` branch!
+
+## 4. Add a Custom Domain to GitHub Pages
+
+I used hostinger and followed this [tutorial](https://dev.to/sidmohanty11/how-to-add-a-custom-domain-to-github-pages-hostinger-edition-p4p)
+
+## 5. Last step if white page error
+
+I had a problem in which my page was blank for seemingly no good reason. I fixed it thanks to this (post)[https://stackoverflow.com/questions/44484377/hosting-gh-pages-on-custom-domain-white-empty-page].
+
+Visit my webpage here: (pavloffulysse.com)[https://pavloffulysse.com/]
+
+<img width="1408" alt="image" src="https://github.com/user-attachments/assets/0220ad4f-cf36-4089-a630-789eca1c4846">
+
+
+initial readme:
+
+# Getting Started with Create React App
 ## Available Scripts
 
 In the project directory, you can run:
