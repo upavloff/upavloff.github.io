@@ -18,9 +18,9 @@ I used hostinger and followed this [tutorial](https://dev.to/sidmohanty11/how-to
 
 ## 5. Last step if white page error
 
-I had a problem in which my page was blank for seemingly no good reason. I fixed it thanks to this (post)[https://stackoverflow.com/questions/44484377/hosting-gh-pages-on-custom-domain-white-empty-page].
+I had a problem in which my page was blank for seemingly no good reason. I fixed it thanks to this [post](https://stackoverflow.com/questions/44484377/hosting-gh-pages-on-custom-domain-white-empty-page).
 
-Visit my webpage here: (pavloffulysse.com)[https://pavloffulysse.com/]
+Visit my webpage here: [pavloffulysse.com](https://pavloffulysse.com/)
 
 <img width="1408" alt="image" src="https://github.com/user-attachments/assets/0220ad4f-cf36-4089-a630-789eca1c4846">
 
