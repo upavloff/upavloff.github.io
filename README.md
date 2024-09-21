@@ -12,6 +12,8 @@ If you want to build a website with a custom domain, use as project name user.gi
 
 To do so run the commands explained in the [tutorial](https://github.com/gitname/react-gh-pages), and don't forget to set the publishing link on the `gh-pages` branch!
 
+You'll have to do a `npm run deploy` each time to update the gh-branch.
+
 ## 4. Add a Custom Domain to GitHub Pages
 
 I used hostinger and followed this [tutorial](https://dev.to/sidmohanty11/how-to-add-a-custom-domain-to-github-pages-hostinger-edition-p4p)
@@ -19,6 +21,8 @@ I used hostinger and followed this [tutorial](https://dev.to/sidmohanty11/how-to
 ## 5. Last step if white page error
 
 I had a problem in which my page was blank for seemingly no good reason. I first followed this [post](https://stackoverflow.com/questions/44484377/hosting-gh-pages-on-custom-domain-white-empty-page) adive, however just changing the homepage in the package.json without forgetting the https was enough.
+
+Also add a ? after the favico.ico to make it visible: `<link rel="icon" href="favicon.ico?" />`.
 
 Visit my webpage here: [pavloffulysse.com](https://pavloffulysse.com/)
 
