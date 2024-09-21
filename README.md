@@ -1,4 +1,4 @@
-# Step to build this project
+# Steps to Build this Project
 
 ## 1. Start by creating a React App
 
@@ -6,28 +6,29 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## 2. Create your repository Github to host your project
 
-If you want to build a website with a custom domain, use as project name user.github.io, with user being your github handles.
+If you want to build a website with a custom domain, use `user.github.io` as the project name, with `user` being your GitHub handle.
 
-## 3. Start building your website and visualize it thanks to github page
+## 3. Start building your website and visualize it thanks to GitHub Pages
 
-To do so run the commands explained in the [tutorial](https://github.com/gitname/react-gh-pages), and don't forget to set the publishing link on the `gh-pages` branch!
+To do so, run the commands explained in the [tutorial](https://github.com/gitname/react-gh-pages), and don't forget to set the publishing link on the `gh-pages` branch!
 
-You'll have to do a `npm run deploy` each time to update the gh-branch.
+You'll have to do a `npm run deploy` each time to update the `gh-pages` branch.
 
 ## 4. Add a Custom Domain to GitHub Pages
 
 I used hostinger and followed this [tutorial](https://dev.to/sidmohanty11/how-to-add-a-custom-domain-to-github-pages-hostinger-edition-p4p)
 
-## 5. Last step if white page error
+## 5. Last step if a white page occurs
 
-I had a problem in which my page was blank for seemingly no good reason. I first followed this [post](https://stackoverflow.com/questions/44484377/hosting-gh-pages-on-custom-domain-white-empty-page) adive, however just changing the homepage in the package.json without forgetting the https was enough.
+Make sure to not forget the https in the `homepage` field of the `package.json` was enough for me.
 
-Also add a ? after the favico.ico to make it visible: `<link rel="icon" href="favicon.ico?" />`.
+Also, add a `?` after the `favico.ico` to make it visible: `<link rel="icon" href="favicon.ico?" />`.
 
 Visit my webpage here: [pavloffulysse.com](https://pavloffulysse.com/)
 
 <img width="1408" alt="image" src="https://github.com/user-attachments/assets/0220ad4f-cf36-4089-a630-789eca1c4846">
 
+--
 
 initial readme:
 
