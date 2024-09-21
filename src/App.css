@@ -51,7 +51,9 @@ h6 {
   position: sticky;
   top: 50px;
   flex: 1;
-  max-width: 300px;
+  max-width: 355px;
+  /* Ensure it doesn't exceed the screen width */
+  box-sizing: border-box;
   padding: 25px;
   /* Neomorphism */
   margin-right: 30px;
@@ -183,15 +185,16 @@ h6 {
 @media (max-width: 850px) {
   .about-articles-section {
     flex-direction: column;
-    padding: 25px;
+    padding: 0px;
 
     /* Stacks the sections vertically */
   }
 
   .about-me {
+    max-width: 100%;
+
     width: 100%;
     position: static;
-    max-width: 100%;
     margin-right: 0;
     /* Removes right margin to avoid extra space */
     margin-bottom: 20px;
@@ -266,4 +269,35 @@ h6 {
 
 .cv-link:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+  .cv-content {
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align the text to the left */
+  }
+
+  .cv-text {
+    padding-right: 0;
+    text-align: left;
+    order: 2;
+    /* Ensure the text stays left-aligned */
+  }
+
+  .cv-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* Center the image */
+    order: 1;
+  }
+
+  .cv-image img {
+    margin-bottom: 20px;
+    /* Add space below the image */
+    margin-left: auto;
+    margin-right: auto;
+    /* Center the image */
+  }
 }
