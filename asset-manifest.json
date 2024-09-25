@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.e805bc94.css",
+    "main.css": "/static/css/main.2df7ea51.css",
     "main.js": "/static/js/main.b212ab36.js",
     "static/media/picProfile.jpeg": "/static/media/picProfile.1d39d97785b9ee75c603.jpeg",
     "static/media/introSNARK.png": "/static/media/introSNARK.624e91195d8be6dd2305.png",
     "static/media/Pavloff_Resume.pdf": "/static/media/Pavloff_Resume.9bc3a09f78fc5c7d6b6f.pdf",
     "static/media/stark.png": "/static/media/stark.7e735fda569ba3c461da.png",
     "index.html": "/index.html",
-    "main.e805bc94.css.map": "/static/css/main.e805bc94.css.map",
+    "main.2df7ea51.css.map": "/static/css/main.2df7ea51.css.map",
     "main.b212ab36.js.map": "/static/js/main.b212ab36.js.map"
   },
   "entrypoints": [
-    "static/css/main.e805bc94.css",
+    "static/css/main.2df7ea51.css",
     "static/js/main.b212ab36.js"
   ]
 }
