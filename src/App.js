@@ -1,15 +1,61 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import picProfile from './assets/picProfile.jpeg';
 import CV from './assets/Pavloff_Resume.pdf';
 import Posts from './Posts';
-import { SiGmail, SiGooglescholar, SiLetterboxd, SiGithub, SiLinkedin, SiStackexchange, SiLichess, SiDblp } from 'react-icons/si';
 import './App.css';
+import { SiGmail, SiGooglescholar, SiLetterboxd, SiGithub, SiLinkedin, SiStackexchange, SiLichess, SiDblp } from 'react-icons/si';
 
 function App() {
   const [activeSection, setActiveSection] = useState('publications'); // Default section
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isToggleVisible, setIsToggleVisible] = useState(false);
+
+  // Check user's system preference on initial load
+  useEffect(() => {
+    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark' || (!savedTheme && userPrefersDark)) {
+      setIsDarkMode(true);
+    }
+  }, []);
+
+  // Toggle the theme and save to localStorage
+  const handleThemeToggle = () => {
+    setIsDarkMode(!isDarkMode);
+    localStorage.setItem('theme', !isDarkMode ? 'dark' : 'light');
+  };
+
+  const showToggle = () => {
+    setIsToggleVisible(true); // Set state to true when hovered
+  };
+
+  // Add dark or light mode class to body
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [isDarkMode]);
 
   return (
     <div className="App">
+
+      <div className="hover-area" onMouseEnter={showToggle}></div>
+      <div className={`toggle-container ${isToggleVisible ? 'visible' : ''}`}>
+        <input
+          type="checkbox"
+          id="theme-toggle"
+          className="theme-toggle-checkbox"
+          checked={isDarkMode}
+          onChange={handleThemeToggle}
+        />
+        <label htmlFor="theme-toggle" className="theme-toggle-label">
+          <span className="theme-toggle-label-background"></span>
+        </label>
+      </div>
+
       <section className="about-articles-section">
 
         {/* About Me Section with Neomorphism Effect */}

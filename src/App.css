@@ -1,4 +1,230 @@
-/* Apply Source Sans Pro as the default font for the body */
+:root {
+  /*Toggle size*/
+  --toggle-size: 75px;
+  --toggle-width: var(--toggle-size);
+  --toggle-height: calc(.5*var(--toggle-size));
+  --toggle-border: calc(.025*var(--toggle-size));
+
+  /* Light mode colors */
+  --blue-border: #e6e7e7;
+  --blue-color: #f0f0f0;
+  --yellow-background: #fffaa8;
+  --yellow-border: #f5eb71;
+
+  /* Dark mode colors */
+  --indigo-border: #5d6baa;
+  --indigo-color: #6866af;
+  --gray-border: #e8e8ea;
+  --gray-dots: #e8e8ea;
+
+  /* General */
+  --light-background: #ffffff;
+  --dark-background: #232324;
+  --white: #ffffff;
+}
+
+body {
+  background-color: var(--light-background);
+  transition: background-color 350ms ease-in;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  color: #d4d4d8;
+  background-color: #232324;
+}
+
+.toggle-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  display: none;
+}
+
+.toggle-container.visible {
+  display: block;
+}
+
+@media (prefers-color-scheme: light) {
+  .hover-area {
+    pointer-events: auto;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 150px;
+    height: 100px;
+    z-index: 1;
+  }
+
+  .hover-area:hover+.toggle-container {
+    display: block;
+  }
+
+  .toggle-container {
+    pointer-events: none;
+  }
+
+  .toggle-container.visible {
+    pointer-events: auto;
+  }
+}
+
+
+/* Show the toggle only if the user prefers dark mode */
+@media (prefers-color-scheme: dark) {
+  .toggle-container {
+    display: block;
+  }
+}
+
+.theme-toggle-checkbox {
+  display: none;
+}
+
+.theme-toggle-checkbox:checked~body {
+  background-color: var(--dark-background);
+}
+
+.theme-toggle-checkbox:checked+.theme-toggle-label {
+  background: var(--indigo-color);
+  border-color: var(--indigo-border);
+}
+
+.theme-toggle-checkbox:checked+.theme-toggle-label .theme-toggle-label-background {
+  left: calc(.6*var(--toggle-height));
+  width: var(--toggle-border);
+}
+
+.theme-toggle-checkbox:checked+.theme-toggle-label .theme-toggle-label-background:before {
+  width: var(--toggle-border);
+  height: var(--toggle-border);
+  top: calc(-5*var(--toggle-border));
+}
+
+.theme-toggle-checkbox:checked+.theme-toggle-label .theme-toggle-label-background:after {
+  width: var(--toggle-border);
+  height: var(--toggle-border);
+  left: calc(-6*var(--toggle-border));
+  top: calc(4*var(--toggle-border));
+}
+
+.theme-toggle-checkbox:checked+.theme-toggle-label:before {
+  background: var(--white);
+  border-color: var(--gray-border);
+  animation-name: switch;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+}
+
+.theme-toggle-checkbox:checked+.theme-toggle-label:after {
+  transition-delay: 350ms;
+  opacity: 1;
+}
+
+.theme-toggle-label {
+  cursor: pointer;
+  width: var(--toggle-width);
+  height: var(--toggle-height);
+  background: var(--blue-color);
+  border-radius: calc(var(--toggle-height) / 2);
+  border: var(--toggle-border) solid var(--blue-border);
+  display: flex;
+  position: relative;
+  transition: all 350ms ease-in;
+}
+
+.theme-toggle-label-background {
+  width: calc(var(--toggle-border)*2);
+  height: var(--toggle-border);
+  border-radius: var(--toggle-border);
+  position: relative;
+  background: var(--white);
+  left: calc(var(--toggle-width)*0.67);
+  top: calc(var(--toggle-height)*0.45);
+  transition: all 150ms ease-in;
+}
+
+.theme-toggle-label-background:before {
+  content: "";
+  position: absolute;
+  top: calc(-1*var(--toggle-border));
+  width: calc(var(--toggle-border)*8);
+  height: var(--toggle-border);
+  border-radius: var(--toggle-border);
+  background: var(--white);
+  left: calc(-4*var(--toggle-border));
+  transition: all 150ms ease-in;
+}
+
+.theme-toggle-label-background:after {
+  content: "";
+  position: absolute;
+  top: var(--toggle-border);
+  width: calc(var(--toggle-border)*8);
+  height: var(--toggle-border);
+  border-radius: var(--toggle-border);
+  background: var(--white);
+  left: calc(-2*var(--toggle-border));
+  transition: all 150ms ease-in;
+}
+
+.theme-toggle-label:before {
+  animation-name: reverse;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+  content: "";
+  width: calc(var(--toggle-height)*0.82);
+  height: calc(var(--toggle-height)*0.82);
+  border: var(--toggle-border) solid var(--yellow-border);
+  top: calc(0.8*var(--toggle-border));
+  left: calc(0.8*var(--toggle-border));
+  position: absolute;
+  border-radius: calc(var(--toggle-height)*0.82);
+  background: var(--yellow-background);
+}
+
+.theme-toggle-label:after {
+  transition-delay: 0ms;
+  transition: all 250ms ease-in;
+  position: absolute;
+  content: "";
+  box-shadow: var(--gray-dots) calc(-2.6*var(--toggle-border)) 0 0 calc(.5*var(--toggle-border)), var(--gray-dots) calc(-5*var(--toggle-border)) calc(3*var(--toggle-border)) 0 calc(-0.5*var(--toggle-border));
+  left: calc(var(--toggle-width)*0.7);
+  top: calc(var(--toggle-height)*0.23);
+  width: calc(var(--toggle-height)*0.1);
+  height: calc(var(--toggle-height)*0.1);
+  background: transparent;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+@keyframes switch {
+  0% {
+    left: calc(0.8*var(--toggle-border));
+  }
+
+  100% {
+    left: calc(var(--toggle-width)/2);
+    width: calc(var(--toggle-height)*0.82);
+  }
+}
+
+@keyframes reverse {
+  0% {
+    left: calc(var(--toggle-width)/2);
+    width: calc(var(--toggle-height)*0.82);
+  }
+
+  100% {
+    left: calc(0.8*var(--toggle-border));
+  }
+}
+
+/*
+==========================================
+*/
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
@@ -6,7 +232,6 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-  /* background-color: #f5f5f5; */
 }
 
 /* Apply Lato for titles and headings */
@@ -138,7 +363,7 @@ h6 {
 .social-list {
   list-style-type: none;
   padding: 0;
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(8, auto);
   /* Attempt to fit all 8 items on one line */
   gap: 20px;
@@ -157,6 +382,11 @@ h6 {
 }
 
 @media (max-width: 850px) {
+  :root {
+    --toggle-size: 50px;
+    /* Smaller size for screens below 768px */
+  }
+
   .social-list {
     grid-template-columns: repeat(8, auto);
   }
