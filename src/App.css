@@ -301,6 +301,7 @@ h6 {
 .right-section {
   flex: 2;
   padding-right: 25px;
+  width: 100%;
 }
 
 .right-section li {
