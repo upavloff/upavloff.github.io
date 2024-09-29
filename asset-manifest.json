@@ -1,10 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.0077461c.css",
-    "main.js": "/static/js/main.ee346bd4.js",
+    "main.js": "/static/js/main.e4d3cfe1.js",
     "static/media/picProfile.jpeg": "/static/media/picProfile.1d39d97785b9ee75c603.jpeg",
     "static/media/introSNARK.png": "/static/media/introSNARK.dff152cf49dabf832b2f.png",
-    "static/media/Pavloff_Resume.pdf": "/static/media/Pavloff_Resume.9bc3a09f78fc5c7d6b6f.pdf",
     "static/media/stark.png": "/static/media/stark.7e735fda569ba3c461da.png",
     "static/media/snarkForumla.png": "/static/media/snarkForumla.6506c25b9dfe25d1f9c1.png",
     "static/media/consensus_layer.webp": "/static/media/consensus_layer.6b7036c54be122e96197.webp",
@@ -13,10 +12,10 @@
     "static/media/intro_randomness.webp": "/static/media/intro_randomness.6d0fef1e1e432cf6b55f.webp",
     "index.html": "/index.html",
     "main.0077461c.css.map": "/static/css/main.0077461c.css.map",
-    "main.ee346bd4.js.map": "/static/js/main.ee346bd4.js.map"
+    "main.e4d3cfe1.js.map": "/static/js/main.e4d3cfe1.js.map"
   },
   "entrypoints": [
     "static/css/main.0077461c.css",
-    "static/js/main.ee346bd4.js"
+    "static/js/main.e4d3cfe1.js"
   ]
 }
