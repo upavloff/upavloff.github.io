@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import picProfile from './assets/picProfile.jpeg';
-import CV from './assets/Pavloff_Resume.pdf';
+// import CV from './assets/Pavloff_Resume.pdf';
 import Posts from './Posts';
 import './App.css';
 import { SiGmail, SiGooglescholar, SiLetterboxd, SiGithub, SiLinkedin, SiStackexchange, SiLichess, SiDblp } from 'react-icons/si';
@@ -17,15 +17,31 @@ function App() {
 
     if (savedTheme === 'dark' || (!savedTheme && userPrefersDark)) {
       setIsDarkMode(true);
+      setIsToggleVisible(true); // Ensure toggle is visible if dark mode is active
+    } else {
+      setIsDarkMode(false);
+      setIsToggleVisible(false); // Ensure toggle is hidden if light mode is active
     }
   }, []);
 
-  // Toggle the theme and save to localStorage
+  // Toggle the theme and only store if it's different from the system preference
   const handleThemeToggle = () => {
+    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const newTheme = !isDarkMode ? 'dark' : 'light';
+
     setIsDarkMode(!isDarkMode);
-    localStorage.setItem('theme', !isDarkMode ? 'dark' : 'light');
+
+    // Store theme only if different from browser preference
+    if ((newTheme === 'dark' && !userPrefersDark) || (newTheme === 'light' && userPrefersDark)) {
+      localStorage.setItem('theme', newTheme);
+    } else {
+      localStorage.removeItem('theme'); // Clear storage if theme matches browser preference
+    }
+
+    setIsToggleVisible(newTheme === 'dark'); // Ensure toggle is visible when dark mode is active
   };
 
+  // Show the toggle when hovered
   const showToggle = () => {
     setIsToggleVisible(true); // Set state to true when hovered
   };
@@ -41,7 +57,6 @@ function App() {
 
   return (
     <div className="App">
-
       <div className="hover-area" onMouseEnter={showToggle}></div>
       <div className={`toggle-container ${isToggleVisible ? 'visible' : ''}`}>
         <input
@@ -167,7 +182,7 @@ function App() {
                   My PhD focuses on Ethereum's Proof-of-Stake protocol, studying its robustness through the lenses of distributed systems and game theory. I analyze the influence of incentive structures on safety and liveness, identifying potential vulnerabilities and strategic behaviors of validators.
                 </p>
                 {/* Link to CV */}
-                <a href={CV} target="_blank" rel="noopener noreferrer" className="cv-link">
+                <a href="/Pavloff_Resume.pdf" target="_blank" rel="noopener noreferrer" className="cv-link">
                   View my full CV [PDF]
                 </a>      (updated 20/09/2024).
               </div>
