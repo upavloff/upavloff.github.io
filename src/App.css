@@ -266,7 +266,8 @@ h6 {
 .about-articles-section {
   display: flex;
   padding: 50px;
-  justify-content: space-between;
+  justify-content: center;
+  /* Center the divs horizontally */
   align-items: flex-start;
   /* Ensures the items align at the top */
 }
@@ -300,7 +301,7 @@ h6 {
 /* Right Section Styling */
 .right-section {
   flex: 2;
-  padding-right: 25px;
+  max-width: 800px;
   width: 100%;
 }
 
@@ -391,6 +392,24 @@ h6 {
   .social-list {
     grid-template-columns: repeat(8, auto);
   }
+
+  .about-articles-section {
+    flex-direction: column;
+    padding: 0px;
+
+    /* Stacks the sections vertically */
+  }
+
+  .about-me {
+    max-width: 100%;
+
+    width: 100%;
+    position: static;
+    margin-right: 0;
+    /* Removes right margin to avoid extra space */
+    margin-bottom: 20px;
+    /* Adds space below the About Me section */
+  }
 }
 
 .social-list li {
@@ -412,26 +431,6 @@ h6 {
   /* Slightly enlarges the icon on hover */
 }
 
-/* Layout for smaller screens (phone) */
-@media (max-width: 850px) {
-  .about-articles-section {
-    flex-direction: column;
-    padding: 0px;
-
-    /* Stacks the sections vertically */
-  }
-
-  .about-me {
-    max-width: 100%;
-
-    width: 100%;
-    position: static;
-    margin-right: 0;
-    /* Removes right margin to avoid extra space */
-    margin-bottom: 20px;
-    /* Adds space below the About Me section */
-  }
-}
 
 
 /*Tool Tip*/

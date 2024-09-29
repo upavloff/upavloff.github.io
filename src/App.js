@@ -63,8 +63,7 @@ function App() {
           <h1>Ulysse Pavloff</h1>
           {/* <img src={picProfile} alt="Profile" className="profile-pic" /> */}
           <p>
-            PhD in Computer Science specializing in Blockchain, Game Theory,
-            and ZK-SNARKs. I have taught at École Polytechnique, HEC, IUT Orsay and ENSIIE.
+            PhD in Computer Science, specializing in Blockchain and Game Theory.
           </p>
           <h3 style={{ marginTop: '30px' }}>Connect with me</h3>
           <ul className="social-list">
@@ -157,16 +156,20 @@ function App() {
           <div className={`content-container ${activeSection === 'cv' ? 'active' : ''}`}>
             <h2>About me</h2>
             <div className="cv-content">
-              {/* Text about you */}
+
               <div className="cv-text">
                 <p>
-                  I am Ulysse Pavloff, a PhD in Computer Science specializing in Blockchain, Game Theory,
-                  and ZK-SNARKs. With teaching experience at École Polytechnique, HEC, and ENSIIE, I am passionate about research and technology.
+                  I am Ulysse Pavloff, a PhD in Computer Science specializing in Blockchain and Game Theory.
+                  With teaching experience at École Polytechnique, HEC, and ENSIIE, I am passionate about research, technology, and currently exploring the intricacies of ZK-SNARKs.
+
+                </p>
+                <p>
+                  My PhD focuses on Ethereum's Proof-of-Stake protocol, studying its robustness through the lenses of distributed systems and game theory. I analyze the influence of incentive structures on safety and liveness, identifying potential vulnerabilities and strategic behaviors of validators.
                 </p>
                 {/* Link to CV */}
                 <a href={CV} target="_blank" rel="noopener noreferrer" className="cv-link">
                   View my full CV [PDF]
-                </a>      (updated 20/09/2024)
+                </a>      (updated 20/09/2024).
               </div>
               {/* Profile image */}
               <div className="cv-image">
