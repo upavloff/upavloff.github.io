@@ -10,14 +10,14 @@ import imageIntroRandomness from './assets/intro_randomness.webp';
 
 const posts = [
     {
-        title: 'zk-SNARK Construction - Part 2 (WIP)',
+        title: 'zk-SNARK Construction - Part 2 [WIP]',
         image: imageSnarkFormula,
         link: 'https://hackmd.io/@your-username/third-post',
     },
     {
-        title: 'zk-SNARK Construction - Part 1 (WIP)',
+        title: 'zk-SNARK Construction - Part 1',
         image: imageSnarkCircuit,//'https://i.imgur.com/3oV4CmD.png',
-        link: 'https://hackmd.io/@your-username/third-post',
+        link: 'https://hackmd.io/@upavloff/H1BSKz0Ai',
     },
     {
         title: 'STARK from the bottom',

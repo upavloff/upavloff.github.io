@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+// import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import picProfile from './assets/picProfile.jpeg';
 // import CV from './assets/Pavloff_Resume.pdf';
 import Posts from './Posts';
