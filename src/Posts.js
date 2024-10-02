@@ -10,9 +10,9 @@ import imageIntroRandomness from './assets/intro_randomness.webp';
 
 const posts = [
     {
-        title: 'zk-SNARK Construction - Part 2 [WIP]',
+        title: 'zk-SNARK Construction - Part 2',
         image: imageSnarkFormula,
-        link: 'https://hackmd.io/@your-username/third-post',
+        link: 'https://hackmd.io/@upavloff/Byqn_Ii8n',
     },
     {
         title: 'zk-SNARK Construction - Part 1',
