@@ -140,7 +140,7 @@ function App() {
             <h2>Publications</h2>
             <ul>
               <li>
-                <a href="link-to-article-1.pdf" target="_blank" rel="noopener noreferrer"><strong>Incentive Compatibility of Ethereum's PoS Consensus Protocol. </strong></a>
+                <a href="\Incentive_Compatibility_of_Ethereum_s_consensus_protocol.pdf" target="_blank" rel="noopener noreferrer"><strong>Incentive Compatibility of Ethereum's PoS Consensus Protocol. </strong></a>
                 Pavloff, U., Amoussou-Guenou, Y., & Tucci-Piergiovanni, S. (2024). 28th International Conference on Principles of Distributed Systems, OPODIS 2024.
               </li>
               <li>
@@ -161,6 +161,13 @@ function App() {
               </li>
             </ul>
 
+            <h2>Manuscript</h2>
+            <div>
+              In October 2024, I successfully defended my PhD thesis. The manuscript, titled{" "}
+              <a href="/manuscript.pdf" target="_blank" rel="noopener noreferrer"><strong>
+                A Game-Theoretic Approach to the Study of Blockchain’s Robustness
+              </strong></a>, is now available in its final version.
+            </div>
           </div>
 
           <div className={`content-container ${activeSection === 'posts' ? 'active' : ''}`}>
