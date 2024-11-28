@@ -164,7 +164,7 @@ function App() {
             <h2>Manuscript</h2>
             <div>
               In October 2024, I successfully defended my PhD thesis. The manuscript, titled{" "}
-              <a href="/manuscript.pdf" target="_blank" rel="noopener noreferrer"><strong>
+              <a href="/manuscript-UlyssePavloff-EN.pdf" target="_blank" rel="noopener noreferrer"><strong>
                 A Game-Theoretic Approach to the Study of Blockchain’s Robustness
               </strong></a>, is now available in its final version.
             </div>
