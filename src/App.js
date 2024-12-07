@@ -163,10 +163,10 @@ function App() {
 
             <h2>Manuscript</h2>
             <div>
-              In October 2024, I successfully defended my PhD thesis. The manuscript, titled{" "}
+              I defended my PhD thesis in October 2024. The manuscript, titled{" "}
               <a href="/manuscript-UlyssePavloff-EN.pdf" target="_blank" rel="noopener noreferrer"><strong>
                 A Game-Theoretic Approach to the Study of Blockchain’s Robustness
-              </strong></a>, is now available in its final version.
+              </strong></a>, is now available in its final version. It explores the robustness of blockchain systems using game-theoretic models, with a focus on Ethereum’s Proof-of-Stake protocol.
             </div>
           </div>
 
@@ -203,8 +203,8 @@ function App() {
           </div>
         </div>
 
-      </section>
-    </div>
+      </section >
+    </div >
   );
 }
 
