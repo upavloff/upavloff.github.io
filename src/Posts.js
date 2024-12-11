@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// import { Link } from 'react-router-dom';
 import './Posts.css';
 import { FaThLarge, FaList } from 'react-icons/fa';
 
@@ -21,6 +22,7 @@ const posts = [
         title: 'zk-SNARK Construction - Part 1',
         image: imageSnarkCircuit,//'https://i.imgur.com/3oV4CmD.png',
         link: 'https://hackmd.io/@upavloff/H1BSKz0Ai',
+        // link: '/posts/zk-snark-construction-part-1.html',
         publishedDate: '2024-06-04',
     },
     {
@@ -55,7 +57,16 @@ const posts = [
     },
 ];
 
+const generateSlug = (title) => {
+    return title
+        .toLowerCase() // Convert to lowercase
+        .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+        .replace(/\s+/g, '-') // Replace spaces with hyphens
+        .replace(/-+/g, '-'); // Ensure no multiple consecutive hyphens
+};
+
 function Posts() {
+
     const [viewMode, setViewMode] = useState(() => {
         return localStorage.getItem('viewMode') || 'list'; // Default to 'list' if not set
     });
@@ -87,43 +98,83 @@ function Posts() {
             {viewMode === 'image' ? (
                 <div className="posts-card">
                     {posts.map((post, index) => {
-                        const domain = new URL(post.link).hostname.replace('www.', ''); // Extract domain name
+                        const domain = (() => {
+                            try {
+                                return new URL(post.link).hostname.replace('www.', ''); // Extract domain name
+                            } catch (error) {
+                                return 'here'; // Fallback if no valid URL
+                            }
+                        })();
+                        const slug = generateSlug(post.title);
 
                         return (
                             <a
-                                href={post.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                key={index} // Key moved to the outermost element
+                                href={post.link} // Navigate to the external URL
+                                target="_blank" // Open in a new tab
+                                rel="noopener noreferrer" // Improve security
+                                key={slug} // Unique key for React rendering
+                                className="post-item"
                             >
-                                <div className="post-item">
-                                    <div className="post-image-container">
-                                        <img src={post.image} alt={post.title} className="post-image" />
-                                        <div className="post-overlay">{domain}</div> {/* Automatically fill the domain */}
-                                    </div>
-                                    <h3 className="post-title">{post.title}</h3>
+                                <div className="post-image-container">
+                                    <img src={post.image} alt={post.title} className="post-image" />
+                                    <div className="post-overlay">{domain}</div>
                                 </div>
+                                <h3 className="post-title">{post.title}</h3>
                             </a>
+                            // <Link
+                            //     to={`${slug}`}
+                            //     state={{ embedUrl: post.link }}
+                            //     key={slug}
+                            //     className="post-item"
+                            // >
+                            //     <div className="post-image-container">
+                            //         <img src={post.image} alt={post.title} className="post-image" />
+                            //         <div className="post-overlay">{domain}</div>
+                            //     </div>
+                            //     <h3 className="post-title">{post.title}</h3>
+                            // </Link>
                         );
                     })}
                 </div>) : (
+
                 <div className="posts-line">
-                    {posts.map((post, index) => (
-                        <a
-                            key={post.title}
-                            href={post.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`post-line ${index % 2 === 0 ? 'even' : 'odd'}`}
-                        >
-                            <div className="post-title">{post.title}</div>
-                            <div className="post-date">{new Date(post.publishedDate).toLocaleDateString(undefined, {
-                                year: 'numeric',
-                                month: 'short',
-                                day: '2-digit',
-                            })}</div>
-                        </a>
-                    ))}
+                    {posts.map((post, index) => {
+
+                        const slug = generateSlug(post.title);
+                        console.log(slug);
+                        return (
+                            <a
+                                href={`${slug}`} // Use `slug` as the href to navigate to the desired location
+                                key={slug} // Unique key for React rendering
+                                className={`post-line ${index % 2 === 0 ? 'even' : 'odd'}`}
+                            >
+                                <div className="post-title">{post.title}</div>
+                                <div className="post-date">
+                                    {new Date(post.publishedDate).toLocaleDateString(undefined, {
+                                        year: 'numeric',
+                                        month: 'short',
+                                        day: '2-digit',
+                                    })}
+                                </div>
+                            </a>
+
+                            // <Link
+                            //     to={`${slug}`}
+                            //     state={{ embedUrl: post.link }}
+                            //     key={slug}
+                            //     className={`post-line ${index % 2 === 0 ? 'even' : 'odd'}`}
+                            // >
+                            //     <div className="post-title">{post.title}</div>
+                            //     <div className="post-date">
+                            //         {new Date(post.publishedDate).toLocaleDateString(undefined, {
+                            //             year: 'numeric',
+                            //             month: 'short',
+                            //             day: '2-digit',
+                            //         })}
+                            //     </div>
+                            // </Link>
+                        );
+                    })}
                 </div>
             )}
         </div>

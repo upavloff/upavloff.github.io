@@ -22,7 +22,7 @@
   --dark-background: #232324;
   --light-text-color: #333;
   --dark-text-color: #d4d4d8;
-  --post-background: rgba(104, 103, 175, 0.1);
+  --post-background: rgba(104, 103, 175, 0.05);
   --post-background-highlight: rgba(104, 103, 175, 0.2);
   --white: #ffffff;
 }
@@ -252,8 +252,6 @@ h6 {
   font-weight: 700;
   /* color: #007bff; */
 }
-
-
 
 
 
