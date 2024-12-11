@@ -1,0 +1,95 @@
+/* .cv-content {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.cv-text {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.cv-text a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cv-text a:hover {
+    text-decoration: underline;
+}
+
+.cv-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} */
+
+/* Container for CV content */
+.cv-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    /* margin-top: 20px; */
+}
+
+.cv-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.cv-image img {
+    width: 170px;
+    /* Adjust size of the image */
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: Add shadow for better aesthetics */
+}
+
+.cv-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cv-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+    .cv-content {
+        flex-direction: column;
+        align-items: flex-start;
+        /* Align the text to the left */
+    }
+
+    .cv-text {
+        padding-right: 0;
+        text-align: left;
+        order: 2;
+        /* Ensure the text stays left-aligned */
+    }
+
+    .cv-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        /* Center the image */
+        order: 1;
+    }
+
+    .cv-image img {
+        margin-bottom: 20px;
+        /* Add space below the image */
+        margin-left: auto;
+        margin-right: auto;
+        /* Center the image */
+    }
+}

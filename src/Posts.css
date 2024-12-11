@@ -1,4 +1,28 @@
 /* CSS for the Posts Component */
+button {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    background: none;
+    color: #333;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0;
+}
+
+button.active {
+    color: #6867af;
+}
+
+
+
 .posts-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -69,7 +93,6 @@
     transition: opacity 0.3s ease;
     color: white;
     font-size: 20px;
-    font-weight: bold;
     z-index: 2;
     pointer-events: none;
 }
@@ -80,16 +103,79 @@
 
 .post-title {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60px;
-    margin-top: 15px;
     font-size: 18px;
     color: #333;
     text-decoration: none;
 }
 
+.post-item .post-title {
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    margin-top: 15px;
+}
+
 .post-item:hover .post-title {
     color: #6867af;
     transition: color 0.3s ease;
+}
+
+/*========== Post list css*/
+
+/* List View Container */
+.posts-list-line {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    /* No gap between rows */
+    width: 100%;
+}
+
+/* Each Row */
+.post-line {
+    display: flex;
+    color: #333;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none !important;
+    padding: 13px 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Alternating Backgrounds */
+.post-line.even {
+    background-color: #f9f9f9;
+}
+
+.post-line.odd {
+    background-color: #fff;
+}
+
+/* Hover Effect */
+.post-line:hover {
+    /* background-color: #7978a2; */
+    background-color: rgba(104, 103, 175, 0.2);
+}
+
+.post-line:hover .post-title {
+    color: #6867af;
+    transition: color 0.3s ease;
+    text-decoration: underline;
+}
+
+/* Title and Date Alignment */
+.posts-list-line .post-title {
+    flex: 1;
+    font-weight: 700;
+    color: #333;
+    /* Align to the left */
+}
+
+.post-line .post-date {
+    font-size: 14px;
+    color: #555;
+    text-align: right;
+    min-width: 100px;
 }
