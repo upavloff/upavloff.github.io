@@ -1,4 +1,5 @@
 /* CSS for the Posts Component */
+
 button {
     font-family: 'Lato', sans-serif;
     font-weight: 700;
@@ -22,15 +23,17 @@ button.active {
 }
 
 
+.view-toggle {
+    margin-bottom: 20px;
+}
 
-.posts-list {
+.posts-card {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 20px;
 }
 
-.posts-list a {
+.posts-card a {
     max-width: 400px;
 }
 
@@ -39,7 +42,8 @@ button.active {
     overflow: hidden;
     max-width: 400px;
     padding: 20px;
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
+    background-color: var(--post-background);
     border-radius: 10px;
     text-align: center;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -48,6 +52,7 @@ button.active {
 
 .post-item:hover {
     transform: scale(1.05);
+    background-color: var(--post-background-highlight);
 }
 
 .post-image-container {
@@ -69,7 +74,8 @@ button.active {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #3433527d;
+    /* background-color: #3433527d; */
+    background-color: var(--post-background-highlight);
     z-index: 1;
     transition: opacity 0.3s ease;
     opacity: 0;
@@ -104,8 +110,8 @@ button.active {
 .post-title {
     display: flex;
     font-size: 18px;
-    color: #333;
     text-decoration: none;
+    color: var(--text-color);
 }
 
 .post-item .post-title {
@@ -123,7 +129,7 @@ button.active {
 /*========== Post list css*/
 
 /* List View Container */
-.posts-list-line {
+.posts-line {
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -134,10 +140,10 @@ button.active {
 /* Each Row */
 .post-line {
     display: flex;
-    color: #333;
     justify-content: space-between;
     align-items: center;
     text-decoration: none !important;
+    color: var(--text-color);
     padding: 13px 15px;
     border-radius: 10px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -146,18 +152,23 @@ button.active {
 
 /* Alternating Backgrounds */
 .post-line.even {
-    background-color: #f9f9f9;
+    /* color: #333; */
+    /* background-color: #f9f9f9; */
+    background-color: var(--post-background);
 }
 
-.post-line.odd {
-    background-color: #fff;
-}
+/* .post-line.odd {
+    color: var(--text-color);
+} */
 
-/* Hover Effect */
 .post-line:hover {
-    /* background-color: #7978a2; */
-    background-color: rgba(104, 103, 175, 0.2);
+    background-color: var(--post-background-highlight);
 }
+
+/* 
+.post-line.even:hover {
+    color: var(--text-color);
+} */
 
 .post-line:hover .post-title {
     color: #6867af;
@@ -166,16 +177,14 @@ button.active {
 }
 
 /* Title and Date Alignment */
-.posts-list-line .post-title {
+.posts-line .post-title {
     flex: 1;
     font-weight: 700;
-    color: #333;
-    /* Align to the left */
 }
 
 .post-line .post-date {
     font-size: 14px;
-    color: #555;
+    /* color: #555; */
     text-align: right;
     min-width: 100px;
 }

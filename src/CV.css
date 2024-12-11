@@ -1,33 +1,3 @@
-/* .cv-content {
-    padding: 20px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.cv-text {
-    flex: 1;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.cv-text a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.cv-text a:hover {
-    text-decoration: underline;
-}
-
-.cv-image img {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-} */
-
 /* Container for CV content */
 .cv-content {
     display: flex;
@@ -54,14 +24,9 @@
 .cv-link {
     display: inline-block;
     margin-top: 15px;
-    color: #007bff;
-    text-decoration: none;
     font-weight: bold;
 }
 
-.cv-link:hover {
-    text-decoration: underline;
-}
 
 @media (max-width: 1200px) {
     .cv-content {

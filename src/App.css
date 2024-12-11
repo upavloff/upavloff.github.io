@@ -20,18 +20,23 @@
   /* General */
   --light-background: #ffffff;
   --dark-background: #232324;
+  --light-text-color: #333;
+  --dark-text-color: #d4d4d8;
+  --post-background: rgba(104, 103, 175, 0.1);
+  --post-background-highlight: rgba(104, 103, 175, 0.2);
   --white: #ffffff;
 }
 
 body {
-  background-color: var(--light-background);
+  --background-color: var(--light-background);
+  --text-color: var(--light-text-color);
   transition: background-color 350ms ease-in;
 }
 
 /* Dark Mode */
 body.dark-mode {
-  color: #d4d4d8;
-  background-color: #232324;
+  --background-color: var(--dark-background);
+  --text-color: var(--dark-text-color);
 }
 
 .toggle-container {
@@ -229,7 +234,8 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #333;
+  color: var(--text-color);
+  background-color: var(--background-color);
   margin: 0;
   padding: 0;
 }
@@ -300,14 +306,13 @@ h6 {
   margin-bottom: 10px;
 }
 
-.right-section a {
+a {
   color: #6867af;
   text-decoration: none;
 }
 
-.right-section a:hover {
+a:hover {
   text-decoration: underline;
-  /* Add underline on hover */
 }
 
 .navigation {

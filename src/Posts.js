@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Posts.css';
 import { FaThLarge, FaList } from 'react-icons/fa';
 
@@ -56,29 +56,36 @@ const posts = [
 ];
 
 function Posts() {
-    const [viewMode, setViewMode] = useState('image'); // Default to image view
+    const [viewMode, setViewMode] = useState(() => {
+        return localStorage.getItem('viewMode') || 'list'; // Default to 'list' if not set
+    });
+
+    // Save to localStorage whenever the viewMode changes
+    useEffect(() => {
+        localStorage.setItem('viewMode', viewMode);
+    }, [viewMode]);
 
     return (
         <div className="posts-page">
             {/* Toggle Button */}
             <div className="view-toggle">
                 <button
-                    className={`toggle-icon ${viewMode === 'image' ? 'active' : ''}`}
-                    onClick={() => setViewMode('image')}
-                >
-                    <FaThLarge />
-                </button>
-                <button
                     className={`toggle-icon ${viewMode === 'list' ? 'active' : ''}`}
                     onClick={() => setViewMode('list')}
                 >
                     <FaList />
                 </button>
+                <button
+                    className={`toggle-icon ${viewMode === 'image' ? 'active' : ''}`}
+                    onClick={() => setViewMode('image')}
+                >
+                    <FaThLarge />
+                </button>
             </div>
 
             {/* Conditional Rendering */}
             {viewMode === 'image' ? (
-                <div className="posts-list">
+                <div className="posts-card">
                     {posts.map((post, index) => {
                         const domain = new URL(post.link).hostname.replace('www.', ''); // Extract domain name
 
@@ -100,7 +107,7 @@ function Posts() {
                         );
                     })}
                 </div>) : (
-                <div className="posts-list-line">
+                <div className="posts-line">
                     {posts.map((post, index) => (
                         <a
                             key={post.title}
@@ -110,7 +117,11 @@ function Posts() {
                             className={`post-line ${index % 2 === 0 ? 'even' : 'odd'}`}
                         >
                             <div className="post-title">{post.title}</div>
-                            <div className="post-date">{new Date(post.publishedDate).toLocaleDateString()}</div>
+                            <div className="post-date">{new Date(post.publishedDate).toLocaleDateString(undefined, {
+                                year: 'numeric',
+                                month: 'short',
+                                day: '2-digit',
+                            })}</div>
                         </a>
                     ))}
                 </div>
