@@ -6,6 +6,7 @@ import Posts from './Posts';
 import CV from './CV';
 import MainLayout from './MainLayout';
 // import PostContent from './PostContent';
+import NotFound from './NotFound'; // Custom 404 page
 
 import './App.css';
 
@@ -113,6 +114,9 @@ function App() {
             element={<PostContent />}
             />
             */}
+
+          {/* Fallback route */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>
