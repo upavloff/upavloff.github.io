@@ -14,6 +14,8 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isToggleVisible, setIsToggleVisible] = useState(false);
 
+
+
   // Check user's system preference on initial load
   useEffect(() => {
     const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;

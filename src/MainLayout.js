@@ -6,11 +6,7 @@ import { SiGmail, SiGooglescholar, SiGithub, SiLinkedin, SiStackexchange, SiDblp
 
 function MainLayout({ children }) {
 
-    const preloadPostsPage = () => {
-        //preload component
-        import('./Posts').catch((err) =>
-            console.error('Failed to preload the Posts component', err)
-        );
+    const preloadImages = () => {
 
         //preload images
         const images = [
@@ -85,7 +81,7 @@ function MainLayout({ children }) {
 
 
             <div className="right-section">
-                <nav className="navigation" onMouseEnter={() => preloadPostsPage()}>
+                <nav className="navigation" onMouseEnter={() => preloadImages()}>
                     <NavLink
                         to="/"
                         className={({ isActive }) =>
