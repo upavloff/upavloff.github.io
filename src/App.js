@@ -5,7 +5,7 @@ import Publications from './Publications';
 import Posts from './Posts';
 import CV from './CV';
 import MainLayout from './MainLayout';
-import PostContent from './PostContent';
+// import PostContent from './PostContent';
 
 import './App.css';
 
@@ -107,11 +107,12 @@ function App() {
             }
           />
 
-          {/* Post Content */}
+          {/* Post Content -> to update when good inclusion of markdown.
           <Route
             path="/posts/:postName"
             element={<PostContent />}
-          />
+            />
+            */}
         </Routes>
       </div>
     </Router>

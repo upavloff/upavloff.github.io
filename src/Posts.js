@@ -144,7 +144,9 @@ function Posts() {
                         console.log(slug);
                         return (
                             <a
-                                href={`${slug}`} // Use `slug` as the href to navigate to the desired location
+                                href={post.link} // Navigate to the external URL
+                                target="_blank" // Open in a new tab
+                                rel="noopener noreferrer" // Improve security
                                 key={slug} // Unique key for React rendering
                                 className={`post-line ${index % 2 === 0 ? 'even' : 'odd'}`}
                             >
