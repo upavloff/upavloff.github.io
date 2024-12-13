@@ -20,7 +20,7 @@ function CV() {
                         My PhD focuses on Ethereum's Proof-of-Stake protocol, studying its robustness through the lenses of distributed systems and game theory. I analyze the influence of incentive structures on safety and liveness, identifying potential vulnerabilities and strategic behaviors of validators.
                     </p>
                     {/* Link to CV */}
-                    <a href="/Pavloff_Resume.pdf" target="_blank" rel="noopener noreferrer" className="cv-link">
+                    <a href="/Pavloff_CV.pdf" target="_blank" rel="noopener noreferrer" className="cv-link">
                         View my full CV [PDF]
                     </a>      (updated 01/12/2024).
                 </div>

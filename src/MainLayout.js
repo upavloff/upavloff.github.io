@@ -3,6 +3,14 @@ import { NavLink } from 'react-router-dom';
 
 import { SiGmail, SiGooglescholar, SiGithub, SiLinkedin, SiStackexchange, SiDblp } from 'react-icons/si'; //SiLetterboxd,  SiLichess,
 
+import picProfile from './assets/picProfile.jpeg';
+import snarkForumla from './assets/snarkForumla.png';
+import snarkCircuit from './assets/snarkCircuit.png';
+import stark from './assets/stark.png';
+import introSNARK from './assets/introSNARK.png';
+import consensus_layer from './assets/consensus_layer.webp';
+import execution_layer from './assets/execution_layer.webp';
+import intro_randomness from './assets/intro_randomness.webp';
 
 function MainLayout({ children }) {
 
@@ -10,14 +18,14 @@ function MainLayout({ children }) {
 
         //preload images
         const images = [
-            './assets/picProfile.png',
-            './assets/snarkForumla.png',
-            './assets/snarkCircuit.png',
-            './assets/stark.png',
-            './assets/introSNARK.png',
-            './assets/consensus_layer.webp',
-            './assets/execution_layer.webp',
-            './assets/intro_randomness.webp',
+            picProfile,
+            snarkForumla,
+            snarkCircuit,
+            stark,
+            introSNARK,
+            consensus_layer,
+            execution_layer,
+            intro_randomness,
         ];
 
         images.forEach((src) => {
