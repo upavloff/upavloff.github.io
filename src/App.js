@@ -8,6 +8,7 @@ import CV from './CV';
 import MainLayout from './MainLayout';
 // import PostContent from './PostContent';
 import NotFound from './NotFound'; // Custom 404 page
+import Analytics from "./Analytics";
 
 import './App.css';
 
