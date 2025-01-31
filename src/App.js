@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import ReactGA from "react-ga4";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Publications from './Publications';
 import Posts from './Posts';
@@ -9,6 +10,8 @@ import MainLayout from './MainLayout';
 import NotFound from './NotFound'; // Custom 404 page
 
 import './App.css';
+
+ReactGA.initialize("G-455NTZN4CR"); // For analytics
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -66,6 +69,7 @@ function App() {
 
   return (
     <Router>
+      <Analytics />
       <div className="App">
         <div className="hover-area" onMouseEnter={showToggle}></div>
         <div className={`toggle-container ${isToggleVisible ? 'visible' : ''}`}>
