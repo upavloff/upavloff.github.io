@@ -41,10 +41,10 @@ function Publications() {
 
             <h2>Manuscript</h2>
             <div>
-                I defended my PhD thesis in October 2024. The manuscript, titled{" "}
+                I defended my PhD thesis in November 2024. The manuscript is titled{" "}
                 <a href="/manuscript-UlyssePavloff-EN.pdf" target="_blank" rel="noopener noreferrer">
                     <strong>A Game-Theoretic Approach to the Study of Blockchain’s Robustness</strong>
-                </a>, is now available in its final version. It explores the robustness of blockchain systems using game-theoretic models, with a focus on Ethereum’s Proof-of-Stake protocol.
+                </a>. It explores the robustness of blockchain protocols using game-theoretic and distributed systems models, with a focus on Ethereum’s Proof-of-Stake protocol.
             </div>
         </div>
     );
