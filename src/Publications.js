@@ -14,7 +14,7 @@ function Publications() {
                     Pavloff, U., Amoussou-Guenou, Y., & Tucci-Piergiovanni, S. (2024). 28th International Conference on Principles of Distributed Systems, OPODIS 2024.
                 </li>
                 <li>
-                    <a href="https://ieeexplore.ieee.org/document/10646904" target="_blank" rel="noopener noreferrer">
+                    <a href="https://dsn2024uq.github.io/Proceedings/pdfs/DSN2024-6rvE3SSpzFYmysif75Dkid/410500a053/410500a053.pdf" target="_blank" rel="noopener noreferrer">
                         <strong>Byzantine Attacks Exploiting Penalties in Ethereum PoS. </strong>
                     </a>
                     Pavloff, U., Amoussou-Guenou, Y., & Tucci-Piergiovanni, S. (2024). 54th Annual IEEE/IFIP International Conference on Dependable Systems and Networks, DSN 2024, Brisbane, QSL, Australia.
