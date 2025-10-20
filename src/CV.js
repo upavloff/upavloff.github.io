@@ -22,7 +22,7 @@ function CV() {
                     {/* Link to CV */}
                     <a href="/Pavloff_CV.pdf" target="_blank" rel="noopener noreferrer" className="cv-link">
                         View my full CV [PDF]
-                    </a>      (updated 15/09/2025).
+                    </a>      (updated October 2025).
                 </div>
                 {/* Profile image */}
                 <div className="cv-image">
