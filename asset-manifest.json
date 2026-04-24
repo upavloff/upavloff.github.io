@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.bbd92673.css",
-    "main.js": "/static/js/main.2c4ba0f1.js",
+    "main.css": "/static/css/main.67f49e48.css",
+    "main.js": "/static/js/main.c0b95897.js",
     "static/media/picProfile.jpeg": "/static/media/picProfile.1d39d97785b9ee75c603.jpeg",
+    "static/media/inactivityLeakPictureOptimized.jpeg": "/static/media/inactivityLeakPictureOptimized.8b13a6335134d8f911cc.jpeg",
+    "static/media/L2feeVault.jpeg": "/static/media/L2feeVault.e4796c81d391f8dca8db.jpeg",
     "static/media/introSNARK.png": "/static/media/introSNARK.dff152cf49dabf832b2f.png",
     "static/media/stark.png": "/static/media/stark.7e735fda569ba3c461da.png",
     "static/media/snarkForumla.png": "/static/media/snarkForumla.6506c25b9dfe25d1f9c1.png",
@@ -11,11 +13,11 @@
     "static/media/execution_layer.webp": "/static/media/execution_layer.2447cb8eff8fd98fc2c9.webp",
     "static/media/intro_randomness.webp": "/static/media/intro_randomness.6d0fef1e1e432cf6b55f.webp",
     "index.html": "/index.html",
-    "main.bbd92673.css.map": "/static/css/main.bbd92673.css.map",
-    "main.2c4ba0f1.js.map": "/static/js/main.2c4ba0f1.js.map"
+    "main.67f49e48.css.map": "/static/css/main.67f49e48.css.map",
+    "main.c0b95897.js.map": "/static/js/main.c0b95897.js.map"
   },
   "entrypoints": [
-    "static/css/main.bbd92673.css",
-    "static/js/main.2c4ba0f1.js"
+    "static/css/main.67f49e48.css",
+    "static/js/main.c0b95897.js"
   ]
 }
