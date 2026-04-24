@@ -10,13 +10,27 @@ import imageIntroSNARK from './assets/introSNARK.png';
 import imageConsensusLayer from './assets/consensus_layer.webp';
 import imageExecutionLayer from './assets/execution_layer.webp';
 import imageIntroRandomness from './assets/intro_randomness.webp';
+import imageInactivityLeak from './assets/inactivityLeakPictureOptimized.jpeg';
+import imageL2FeeVault from './assets/L2feeVault.jpeg';
 
 const posts = [
+    {
+        title: 'The L2 Fee Vault',
+        image: imageL2FeeVault,
+        link: 'https://ethresear.ch/t/the-l2-fee-vault-pricing-l1-costs-with-feedback-control/24656',
+        publishedDate: '2026-04-15',
+    },
     {
         title: 'zk-SNARK Construction - Part 2',
         image: imageSnarkFormula,
         link: 'https://hackmd.io/@upavloff/Byqn_Ii8n',
         publishedDate: '2024-11-03',
+    },
+    {
+        title: 'Inactivity Leak unveiled',
+        image: imageInactivityLeak,
+        link: 'https://ethresear.ch/t/inactivity-leak-unveiled/19774',
+        publishedDate: '2024-06-10',
     },
     {
         title: 'zk-SNARK Construction - Part 1',
