@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { SiGmail, SiGooglescholar, SiGithub, SiLinkedin, SiStackexchange, SiDblp } from 'react-icons/si'; //SiLetterboxd,  SiLichess,
+import { SiGmail, SiGooglescholar, SiGithub, SiStackexchange, SiDblp } from 'react-icons/si'; //SiLetterboxd,  SiLichess,
+import { FaLinkedin } from 'react-icons/fa';
 
 import picProfile from './assets/picProfile.jpeg';
 import snarkForumla from './assets/snarkForumla.png';
@@ -55,7 +56,7 @@ function MainLayout({ children }) {
                     </li>
                     <li>
                         <a href="https://linkedin.com/in/ulysse-pavloff" target="_blank" rel="noopener noreferrer" data-tooltip="LinkedIn">
-                            <SiLinkedin />
+                            <FaLinkedin />
                         </a>
                     </li>
                     <li>

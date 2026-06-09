@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback, useRef } from 'react';
 import picProfile from './assets/picProfile.jpeg';
-import { SiGmail, SiGooglescholar, SiLetterboxd, SiGithub, SiLinkedin, SiStackexchange, SiLichess, SiDblp } from 'react-icons/si';
+import { SiGmail, SiGooglescholar, SiLetterboxd, SiGithub, SiStackexchange, SiLichess, SiDblp } from 'react-icons/si';
+import { FaLinkedin } from 'react-icons/fa';
 import Grid from './Grid';
 import { gsap } from 'gsap';
 import './App.css';
@@ -214,7 +215,7 @@ function App() {
             </li>
             <li>
               <a href="https://linkedin.com/in/ulysse-pavloff" target="_blank" rel="noopener noreferrer">
-                <SiLinkedin />
+                <FaLinkedin />
               </a>
             </li>
             <li>
