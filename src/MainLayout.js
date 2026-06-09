@@ -13,7 +13,6 @@ import execution_layer from './assets/execution_layer.webp';
 import intro_randomness from './assets/intro_randomness.webp';
 
 function MainLayout({ children }) {
-
     const preloadImages = () => {
 
         //preload images
@@ -89,32 +88,42 @@ function MainLayout({ children }) {
 
 
             <div className="right-section">
-                <nav className="navigation" onMouseEnter={() => preloadImages()}>
-                    <NavLink
-                        to="/"
-                        className={({ isActive }) =>
-                            isActive ? 'nav-button active' : 'nav-button'
-                        }
-                    >
-                        Publications
-                    </NavLink>
-                    <NavLink
-                        to="/posts"
-                        className={({ isActive }) =>
-                            isActive ? 'nav-button active' : 'nav-button'
-                        }
-                    >
-                        Posts
-                    </NavLink>
-                    <NavLink
-                        to="/cv"
-                        className={({ isActive }) =>
-                            isActive ? 'nav-button active' : 'nav-button'
-                        }
-                    >
-                        CV
-                    </NavLink>
-                </nav>
+                <div className="navigation-wrapper">
+                    <nav className="navigation" onMouseEnter={() => preloadImages()}>
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) =>
+                                isActive ? 'nav-button active' : 'nav-button'
+                            }
+                        >
+                            Publications
+                        </NavLink>
+                        <NavLink
+                            to="/posts"
+                            className={({ isActive }) =>
+                                isActive ? 'nav-button active' : 'nav-button'
+                            }
+                        >
+                            Posts
+                        </NavLink>
+                        <NavLink
+                            to="/cv"
+                            className={({ isActive }) =>
+                                isActive ? 'nav-button active' : 'nav-button'
+                            }
+                        >
+                            CV
+                        </NavLink>
+                        <NavLink
+                            to="/talk"
+                            className={({ isActive }) =>
+                                `nav-button talk-nav-button ${isActive ? 'active' : ''}`
+                            }
+                        >
+                            Talk
+                        </NavLink>
+                    </nav>
+                </div>
 
                 <div className="contentElement">{children}</div>
             </div>

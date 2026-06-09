@@ -4,6 +4,7 @@ import ReactGA from "react-ga4";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Publications from './Publications';
 import Posts from './Posts';
+import Talks from './Talks';
 import CV from './CV';
 import MainLayout from './MainLayout';
 // import PostContent from './PostContent';
@@ -111,6 +112,14 @@ function App() {
             element={
               <MainLayout>
                 <CV />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/talk"
+            element={
+              <MainLayout>
+                <Talks />
               </MainLayout>
             }
           />

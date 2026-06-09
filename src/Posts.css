@@ -23,7 +23,7 @@ button:hover {
 }
 
 button.active {
-    color: #6867af;
+    color: var(--accent-color-active);
 }
 
 
@@ -78,7 +78,6 @@ button.active {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-color: #3433527d; */
     background-color: var(--post-background-highlight);
     z-index: 1;
     transition: opacity 0.3s ease;
@@ -126,7 +125,7 @@ button.active {
 }
 
 .post-item:hover .post-title {
-    color: #6867af;
+    color: var(--accent-color-hover);
     transition: color 0.3s ease;
 }
 
@@ -175,7 +174,7 @@ button.active {
 } */
 
 .post-line:hover .post-title {
-    color: #6867af;
+    color: var(--accent-color-hover);
     transition: color 0.3s ease;
     text-decoration: underline;
 }

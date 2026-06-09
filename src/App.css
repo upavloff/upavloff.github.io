@@ -12,18 +12,24 @@
   --yellow-border: #f5eb71;
 
   /* Dark mode colors */
-  --indigo-border: #5d6baa;
-  --indigo-color: #6866af;
+  --toggle-dark-border: var(--accent-color-active);
+  --toggle-dark-color: var(--accent-color);
   --gray-border: #e8e8ea;
   --gray-dots: #e8e8ea;
 
   /* General */
+  --accent-color: #ff851a;
+  --accent-color-hover: #e16900;
+  --accent-color-active: #ff851a;
+  --accent-surface: rgba(255, 133, 26, 0.07);
+  --accent-surface-highlight: rgba(255, 133, 26, 0.18);
+  --accent-tooltip: rgba(94, 48, 8, 0.86);
   --light-background: #ffffff;
   --dark-background: #232324;
   --light-text-color: #333;
   --dark-text-color: #d4d4d8;
-  --post-background: rgba(104, 103, 175, 0.05);
-  --post-background-highlight: rgba(104, 103, 175, 0.2);
+  --post-background: var(--accent-surface);
+  --post-background-highlight: var(--accent-surface-highlight);
   --white: #ffffff;
 }
 
@@ -92,8 +98,8 @@ body.dark-mode {
 }
 
 .theme-toggle-checkbox:checked+.theme-toggle-label {
-  background: var(--indigo-color);
-  border-color: var(--indigo-border);
+  background: var(--toggle-dark-color);
+  border-color: var(--toggle-dark-border);
 }
 
 .theme-toggle-checkbox:checked+.theme-toggle-label .theme-toggle-label-background {
@@ -281,7 +287,7 @@ h6 {
 }
 
 .about-me h1 {
-  color: #6867af;
+  color: var(--accent-color);
   font-size: 34px;
   /* color: #69a7ba; */
 }
@@ -305,12 +311,16 @@ h6 {
 }
 
 a {
-  color: #6867af;
+  color: var(--accent-color);
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+.navigation-wrapper {
+  position: relative;
 }
 
 .navigation {
@@ -346,8 +356,23 @@ li {
 }
 
 .navigation .nav-button.active {
-  background-color: #6867af;
+  background-color: var(--accent-color-active);
   color: #ffffff;
+}
+
+.navigation .talk-nav-button {
+  opacity: 0;
+  pointer-events: auto;
+  transform: translateX(-8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navigation .talk-nav-button:hover,
+.navigation .talk-nav-button:focus,
+.navigation .talk-nav-button.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
 }
 
 /* Content Containers */
@@ -404,6 +429,12 @@ li {
     margin-bottom: 20px;
     /* Adds space below the About Me section */
   }
+
+  .navigation .talk-nav-button {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
 }
 
 .social-list li {
@@ -417,10 +448,11 @@ li {
 
 .social-list li:hover {
   transform: scale(1.2);
+  z-index: 10;
 }
 
 .social-list li a:hover {
-  color: #7978a2;
+  color: var(--accent-color-hover);
   /* transform: scale(.1); */
   /* Slightly enlarges the icon on hover */
 }
@@ -441,7 +473,7 @@ li {
   /* Adjust position */
   left: 50%;
   transform: translateX(-50%);
-  background-color: #343352c5;
+  background-color: var(--accent-tooltip);
   color: #fff;
   padding: 5px;
   border-radius: 5px;
@@ -451,6 +483,7 @@ li {
   transition: opacity 0.3s ease;
   white-space: nowrap;
   /* Prevents line breaks */
+  z-index: 20;
 }
 
 /* Show the tooltip on hover */
